@@ -20,13 +20,19 @@ export default function Profile({ onNavigate }) {
     fetchProfile()
   }, [])
 
-  if (!profile) return null
+  if (!profile) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-[#070d1f]">
+        <span className="material-symbols-outlined text-[#a8d0b4] text-5xl animate-pulse">account_circle</span>
+      </div>
+    )
+  }
 
   const { user, scans, badges } = profile
 
   return (
     <div className="min-h-screen bg-[#070d1f] text-[#dfe4ff] pb-32 screen-enter">
-      <TopAppBar points={`${user.total_points} pts`} />
+      <TopAppBar />
 
       <main className="pt-24 pb-32 px-6 max-w-2xl mx-auto">
         <section className="mb-12">

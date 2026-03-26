@@ -1,7 +1,9 @@
-// TopAppBar — shared across all screens
-// Matches Stitch header: logo + points pill
+import { useAuth } from '../context/AuthContext'
 
-export default function TopAppBar({ points = '2,450 pts', showStarsIcon = false }) {
+export default function TopAppBar({ showStarsIcon = false }) {
+  const { user } = useAuth()
+  const points = user ? `${user.total_points || 0} pts` : '0 pts'
+
   return (
     <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md flex justify-between items-center px-6 h-16">
       {/* Logo */}

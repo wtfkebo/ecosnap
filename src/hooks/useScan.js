@@ -10,34 +10,40 @@ export default function useScan(captureFnRef) {
 
   useEffect(() => {
     async function triggerDetection() {
-      // 1. Wait 2 seconds of scanning before taking the picture
-      await new Promise(r => setTimeout(r, 2000))
+      // 1. Initial 2.5s scan of the scene
+      await new Promise(r => setTimeout(r, 2500))
       
-      if (!isMounted.current || scanState !== 'scanning') return
+      const attempt = async () => {
+        if (!isMounted.current || scanState === 'detected') return
 
-      try {
-        // 2. Capture frame from video view
-        const base64 = captureFnRef.current?.()
-        if (!base64) return
+        try {
+          // 2. Capture and Start "Thinking"
+          const base64 = captureFnRef.current?.()
+          if (!base64) return
+          
+          setScanState('thinking')
+          const { data } = await API.post('/scan/detect', { imageBase64: base64 })
 
-        // 3. Call backend Gemini Vision
-        const { data } = await API.post('/scan/detect', { imageBase64: base64 })
+          if (!isMounted.current) return
 
-        if (!isMounted.current) return
-
-        // 4. Update state with real AI results
-        setDetectedData(data)
-        setScanState('detected')
-        setSheetVisible(true)
-      } catch (err) {
-        console.error('Detection failed', err)
-        // Retry after a failure
-        if (isMounted.current) triggerDetection()
+          // 3. Success!
+          setDetectedData(data)
+          setScanState('detected')
+          setSheetVisible(true)
+        } catch (err) {
+          console.error('AI Scan Error, Retrying...', err)
+          if (isMounted.current) {
+            setScanState('scanning')
+            // Wait 5 seconds before next attempt to avoid spamming the waking-up server
+            setTimeout(attempt, 5000)
+          }
+        }
       }
+      
+      attempt()
     }
 
     triggerDetection()
-
     return () => { isMounted.current = false }
   }, [])
 

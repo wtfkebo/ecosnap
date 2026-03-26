@@ -9,6 +9,7 @@ import useScan      from '../hooks/useScan.js'
 
 const HUD = {
   scanning: { sub: 'Analyzing Environment', main: 'Scanning…'      },
+  thinking: { sub: 'Consulting Gemini AI',   main: 'Analyzing…'     },
   detected: { sub: 'Object Identified',     main: 'Detected'       },
 }
 
@@ -33,7 +34,7 @@ export default function ScanScreen({ onAction, onNavigate }) {
 
   return (
     <div className="min-h-screen bg-black flex flex-col overflow-hidden screen-enter">
-      <TopAppBar points="2,450 pts" />
+      <TopAppBar />
 
       {/* Real Camera viewport */}
       <main className="flex-grow relative flex items-center justify-center bg-black">

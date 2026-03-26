@@ -16,7 +16,14 @@ function MainApp() {
   const [lastAction, setLastAction] = useState('reuse')
   const [scanKey, setScanKey]       = useState(0) // increment to remount ScanScreen → resets useScan
 
-  if (loading) return null
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-[#020617]">
+        <span className="material-symbols-outlined text-[#a8d0b4] text-5xl animate-pulse">eco</span>
+        <p className="mt-4 text-[#a8d0b4] text-xs font-bold uppercase tracking-widest">Waking up EcoSnap...</p>
+      </div>
+    )
+  }
   if (!user) return <LoginScreen />
 
   // Called by BottomNavBar tabs
