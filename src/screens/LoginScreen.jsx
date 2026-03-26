@@ -17,17 +17,19 @@ export default function LoginScreen() {
     setError('')
     setLoading(true)
 
+    // Forgiving Format: If they type 'KEBO', turn it into 'kebo@ecosnap.com'
+    const formattedEmail = email.includes('@') ? email.toLowerCase() : `${email.toLowerCase().replace(/\s/g, '')}@ecosnap.com`;
+    const finalUsername  = username || email.split('@')[0];
+
     try {
       if (isRegister) {
-        // 1. Sign up
-        await API.post('/auth/register', { email, password, username })
-        // 2. Automatically log in after register
-        await login(email, password)
+        await API.post('/auth/register', { email: formattedEmail, password, username: finalUsername })
+        await login(formattedEmail, password)
       } else {
-        await login(email, password)
+        await login(formattedEmail, password)
       }
     } catch (err) {
-      setError(err.response?.data?.error || 'Authentication failed. Check your .env setup.')
+      setError(err.response?.data?.error || 'Authentication failed. Check your credentials.')
     } finally {
       setLoading(false)
     }

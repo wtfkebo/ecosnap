@@ -18,18 +18,18 @@ router.post('/register', async (req, res) => {
     password,
   });
 
-  if (authError) return res.status(400).json({ error: authError.message });
+  // 💡 FORGIVING LOGIC: If user already exists, just log them in instead of erroring
+  if (authError) {
+    if (authError.message.toLowerCase().includes('already registered')) {
+      const { data: loginData, error: loginError } = await supabase.auth.signInWithPassword({ email, password });
+      if (loginError) return res.status(401).json({ error: loginError.message });
+      return res.json({ message: 'Welcome back!', session: loginData.session, user: loginData.user });
+    }
+    return res.status(400).json({ error: authError.message });
+  }
 
   // B. Local profile creation in public.users
-  const { error: profileError } = await supabase
-    .from('users')
-    .insert([{ id: authData.user.id, username }]);
-
-  if (profileError) {
-    // If local profile fails, we might still have the auth user, 
-    // but the username uniqueness constraint may have been hit.
-    return res.status(400).json({ error: profileError.message });
-  }
+  await supabase.from('users').insert([{ id: authData.user.id, username }]);
 
   res.status(201).json({
     message: 'User registered successfully',
