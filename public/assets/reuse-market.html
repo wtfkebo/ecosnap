@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#46655d",
+                        "on-secondary-fixed": "#3a4137",
+                        "on-tertiary-fixed-variant": "#4b6b62",
+                        "background": "#000000",
+                        "secondary-fixed": "#dde5d6",
+                        "secondary-container": "#363e33",
+                        "primary-fixed-dim": "#b5dec2",
+                        "outline-variant": "#32457c",
+                        "tertiary-fixed-dim": "#c7eadf",
+                        "surface-container-highest": "#0a2257",
+                        "inverse-on-surface": "#4f5469",
+                        "inverse-primary": "#426750",
+                        "on-primary": "#234733",
+                        "surface-container": "#0a1839",
+                        "surface-variant": "#0a2257",
+                        "primary-dim": "#9ac2a7",
+                        "outline": "#6073ad",
+                        "on-tertiary-container": "#3e5d55",
+                        "surface-bright": "#082768",
+                        "on-primary-fixed": "#224632",
+                        "tertiary": "#e5fff6",
+                        "on-error-container": "#ff9993",
+                        "primary-container": "#2a4e39",
+                        "error-container": "#7f2927",
+                        "surface-tint": "#a8d0b4",
+                        "surface-container-low": "#09122b",
+                        "on-secondary-container": "#bac2b3",
+                        "surface-container-high": "#0b1d48",
+                        "inverse-surface": "#faf8ff",
+                        "on-surface-variant": "#96a9e6",
+                        "tertiary-fixed": "#d5f8ed",
+                        "secondary-fixed-dim": "#cfd7c8",
+                        "secondary-dim": "#98a093",
+                        "tertiary-container": "#d0f3e7",
+                        "on-secondary-fixed-variant": "#565e52",
+                        "surface-container-lowest": "#020617",
+                        "error-dim": "#bb5551",
+                        "on-secondary": "#1b2219",
+                        "surface": "#070d1f",
+                        "on-error": "#490106",
+                        "primary-fixed": "#c3eccf",
+                        "on-tertiary-fixed": "#2f4e46",
+                        "on-background": "#dfe4ff",
+                        "tertiary-dim": "#c7eadf",
+                        "surface-dim": "#070d1f",
+                        "secondary": "#98a093",
+                        "on-surface": "#dfe4ff",
+                        "on-primary-container": "#b1dabe",
+                        "on-primary-fixed-variant": "#3f634d",
+                        "error": "#ee7d77",
+                        "primary": "#a8d0b4",
+                        "market-border": "#5F7F76",
+                        "cta-bg": "#7FA68C"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #E5E7EB;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#a8d0b4]" data-icon="eco">eco</span>
+<span class="text-xl font-bold tracking-tighter text-[#a8d0b4]">EcoSnap</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-high px-3 py-1 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[#a8d0b4] text-sm" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-['Inter'] leading-relaxed tracking-tight text-[#E5E7EB] text-sm font-medium">2,450 pts</span>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-5xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-10">
+<h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-4 text-[#dfe4ff]">Reuse Market</h1>
+<p class="text-secondary max-w-md leading-relaxed">Give your pre-loved items a second life. Trade, sell, or donate within the community.</p>
+</section>
+<!-- Market Controls -->
+<div class="flex gap-3 mb-8 overflow-x-auto no-scrollbar pb-2">
+<button class="bg-[#a8d0b4] text-on-primary px-6 py-2 rounded-xl text-sm font-semibold whitespace-nowrap active:scale-95 duration-200">All Items</button>
+<button class="bg-surface-container-highest text-[#98a093] px-6 py-2 rounded-xl text-sm font-medium whitespace-nowrap active:scale-95 duration-200">Electronics</button>
+<button class="bg-surface-container-highest text-[#98a093] px-6 py-2 rounded-xl text-sm font-medium whitespace-nowrap active:scale-95 duration-200">Home Goods</button>
+<button class="bg-surface-container-highest text-[#98a093] px-6 py-2 rounded-xl text-sm font-medium whitespace-nowrap active:scale-95 duration-200">Clothing</button>
+</div>
+<!-- Bento Grid / 2-Column Grid -->
+<div class="grid grid-cols-2 gap-4 md:gap-6">
+<!-- Market Card 1 -->
+<div class="bg-[#020617] border border-[#5F7F76] rounded-[12px] overflow-hidden flex flex-col h-full group">
+<div class="aspect-square w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="minimalist glass coffee carafe on a dark textured surface with dramatic side lighting and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArdUQaui5gC7WJMG4fsGc1P_iZi0qPnGSiFNCKGYuMP7QBPfL5CBKgwZspoMJWuxdo_n9Wro37FDujz-0hHV0a1pUHjeiWNPWgmsLfQ7DPKKQKxrnb8oKLQ1KuV7rUpGDr90sqWhDjTy17W2V7nmzklkBKxMKjTvZysan4cGWR2P4bIecSmF3KfB0m0fi5rT7KesXtj6eZHSZuzxFsA9CY2ENNbkEXswpeSlXEvz8YTnEGvI703Yv2ibczAwEBjqJvDm07-_66H0nK"/>
+<div class="absolute top-3 left-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-[#a8d0b4]">
+                        Gently Used
+                    </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg leading-tight tracking-tight">Chemex Classic</h3>
+<span class="text-[#a8d0b4] font-bold">450 pts</span>
+</div>
+<p class="text-secondary text-xs mb-4 line-clamp-2">Original glass pour-over coffee maker in excellent condition. Includes 10 filters.</p>
+<div class="mt-auto">
+<button class="w-full bg-[#7FA68C] text-black py-3 rounded-xl font-bold text-sm uppercase tracking-wider active:scale-95 duration-150">List Item</button>
+</div>
+</div>
+</div>
+<!-- Market Card 2 -->
+<div class="bg-[#020617] border border-[#5F7F76] rounded-[12px] overflow-hidden flex flex-col h-full group">
+<div class="aspect-square w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="high-quality matte black wireless headphones resting on a dark velvet cloth with moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvX7-m1E9r7X9ff7tEd3ZnWeyZXhkoFLahBopyqs1PbqlfygURm7PXCbZoBDzTq-C6DvsJ5GXaO96iO1r6ouJm5IMlUacss3dHp_rZfeDiDf3cJbhf6Xjq6sTRksziuyFZ_M8YAutcRZChXxJMAHeCePcsf5ZLMwwHa9y9_I53SLusjCdaTtAot1XMtIJ6nMrgsmJsRci2Af9B6jev_444kQqpNoBvMpieqlNfQFU6WY2QNn4-i267hl0v-XXnv0jz8oRjiMczqAtc"/>
+<div class="absolute top-3 left-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-[#a8d0b4]">
+                        Refurbished
+                    </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg leading-tight tracking-tight">Studio Headphones</h3>
+<span class="text-[#a8d0b4] font-bold">1.2k pts</span>
+</div>
+<p class="text-secondary text-xs mb-4 line-clamp-2">Noise-canceling headphones. Battery replaced last month. Sustainably sourced packaging.</p>
+<div class="mt-auto">
+<button class="w-full bg-[#7FA68C] text-black py-3 rounded-xl font-bold text-sm uppercase tracking-wider active:scale-95 duration-150">List Item</button>
+</div>
+</div>
+</div>
+<!-- Market Card 3 -->
+<div class="bg-[#020617] border border-[#5F7F76] rounded-[12px] overflow-hidden flex flex-col h-full group">
+<div class="aspect-square w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="artisanal hand-poured candle in a ceramic jar on a dark wooden table with a soft flame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvL4XEScB_0x6_DeDKpjy7vzQ1WSFyYOL_9oDUwTG4S4YC6dgAEEZcvraZMfAnvD1xSGh6jq7im4NeoyVbpgw3XTipuvXNG6l5zl87cJgF4YMH1oDOodVuqBDTO5-Yr3bRfVBk84aBDPtguPaGaKerG1JWWvl5JORu_EDbtYysVcAY2Kdt8xUFi6t9F2asLquSK_ujJKrIrCKCQtVsjDXmFKXSMvumTsG8icScBnoLcBWGGAXSerI3WlHOpmnyB98hxxdp81HK2rU6"/>
+<div class="absolute top-3 left-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-[#a8d0b4]">
+                        Unused
+                    </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg leading-tight tracking-tight">Ceramic Vessel</h3>
+<span class="text-[#a8d0b4] font-bold">200 pts</span>
+</div>
+<p class="text-secondary text-xs mb-4 line-clamp-2">Handmade stoneware vessel. Perfect for repurposing as a planter or desk organizer.</p>
+<div class="mt-auto">
+<button class="w-full bg-[#7FA68C] text-black py-3 rounded-xl font-bold text-sm uppercase tracking-wider active:scale-95 duration-150">List Item</button>
+</div>
+</div>
+</div>
+<!-- Market Card 4 -->
+<div class="bg-[#020617] border border-[#5F7F76] rounded-[12px] overflow-hidden flex flex-col h-full group">
+<div class="aspect-square w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="vintage toy car made of wood and metal on a dark rustic surface with warm spotlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJJfIP6haC8DO1MTa7ROJDjmsKwPOi_Cq0KfBLUaVdjnIeuYJv5xeVQVJ-hZAVZMeSX7N0eEE3Ek8GDb-yJ9xefNWInC7r_9nNiAMcIA4Fn_t56H8azxND37K1YCb7xhAI4zh7iJf5P5THt9dVkpjZnsKDsxd3cZQS8O_IV66LNer7pRs1qc4uAY2mrS9EBWJrC5ZhZDLkzgOlpW32yiBmcDrX_NQZK0jIF40SgEcOGnScHfovbjZeDoGYtvncjoDSX73lJaZq9dD5"/>
+<div class="absolute top-3 left-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-[#a8d0b4]">
+                        Collectable
+                    </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg leading-tight tracking-tight">Eco Wooden Toy</h3>
+<span class="text-[#a8d0b4] font-bold">150 pts</span>
+</div>
+<p class="text-secondary text-xs mb-4 line-clamp-2">Sustainably harvested oak wood toy car. Natural finish, chemical-free.</p>
+<div class="mt-auto">
+<button class="w-full bg-[#7FA68C] text-black py-3 rounded-xl font-bold text-sm uppercase tracking-wider active:scale-95 duration-150">List Item</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-black/80 backdrop-blur-md pb-safe border-t border-[#32457c]/15 flex justify-around items-center h-20 px-4 w-full">
+<a class="flex flex-col items-center justify-center text-[#98a093] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="center_focus_strong">center_focus_strong</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase">Scan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#a8d0b4] scale-110 transition-transform active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase">Market</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#98a093] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="redeem">redeem</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase">Rewards</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#98a093] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase">Profile</span>
+</a>
+</nav>
+</body></html>

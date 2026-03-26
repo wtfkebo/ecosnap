@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#46655d",
+                        "on-secondary-fixed": "#3a4137",
+                        "on-tertiary-fixed-variant": "#4b6b62",
+                        "background": "#000000",
+                        "secondary-fixed": "#dde5d6",
+                        "secondary-container": "#363e33",
+                        "primary-fixed-dim": "#b5dec2",
+                        "outline-variant": "#32457c",
+                        "tertiary-fixed-dim": "#c7eadf",
+                        "surface-container-highest": "#0a2257",
+                        "inverse-on-surface": "#4f5469",
+                        "inverse-primary": "#426750",
+                        "on-primary": "#234733",
+                        "surface-container": "#0a1839",
+                        "surface-variant": "#0a2257",
+                        "primary-dim": "#9ac2a7",
+                        "outline": "#6073ad",
+                        "on-tertiary-container": "#3e5d55",
+                        "surface-bright": "#082768",
+                        "on-primary-fixed": "#224632",
+                        "tertiary": "#e5fff6",
+                        "on-error-container": "#ff9993",
+                        "primary-container": "#2a4e39",
+                        "error-container": "#7f2927",
+                        "surface-tint": "#a8d0b4",
+                        "surface-container-low": "#09122b",
+                        "on-secondary-container": "#bac2b3",
+                        "surface-container-high": "#0b1d48",
+                        "inverse-surface": "#faf8ff",
+                        "on-surface-variant": "#96a9e6",
+                        "tertiary-fixed": "#d5f8ed",
+                        "secondary-fixed-dim": "#cfd7c8",
+                        "secondary-dim": "#98a093",
+                        "tertiary-container": "#d0f3e7",
+                        "on-secondary-fixed-variant": "#565e52",
+                        "surface-container-lowest": "#000000",
+                        "error-dim": "#bb5551",
+                        "on-secondary": "#1b2219",
+                        "surface": "#070d1f",
+                        "on-error": "#490106",
+                        "primary-fixed": "#c3eccf",
+                        "on-tertiary-fixed": "#2f4e46",
+                        "on-background": "#dfe4ff",
+                        "tertiary-dim": "#c7eadf",
+                        "surface-dim": "#070d1f",
+                        "secondary": "#98a093",
+                        "on-surface": "#dfe4ff",
+                        "on-primary-container": "#b1dabe",
+                        "on-primary-fixed-variant": "#3f634d",
+                        "error": "#ee7d77",
+                        "primary": "#a8d0b4"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #000000;
+            color: #dfe4ff;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col justify-between items-center overflow-hidden">
+<header class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#a8d0b4]" data-icon="eco">eco</span>
+<span class="text-xl font-bold tracking-tighter text-[#a8d0b4]">EcoSnap</span>
+</div>
+<div class="font-['Inter'] leading-relaxed tracking-tight text-[#E5E7EB] font-medium">
+            2,450 pts
+        </div>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center px-8 w-full max-w-md mx-auto">
+<div class="relative w-full aspect-square flex items-center justify-center mb-12">
+<div class="absolute inset-0 rounded-full bg-[#a8d0b4]/5 scale-150 blur-3xl"></div>
+<div class="relative flex flex-col items-center text-center">
+<div class="mb-8 p-6 rounded-full bg-surface-container-low border border-[#a8d0b4]/10">
+<span class="material-symbols-outlined text-6xl text-[#a8d0b4]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="text-5xl font-extrabold tracking-tighter text-[#a8d0b4] mb-4">
+                    +30 EcoPoints
+                </h1>
+<p class="text-xl font-medium text-[#E5E7EB] tracking-wide opacity-90">
+                    Good choice
+                </p>
+<div class="mt-12 grid grid-cols-2 gap-4 w-full opacity-60">
+<div class="text-left border-l border-[#32457c]/20 pl-4">
+<p class="text-[10px] uppercase tracking-widest text-[#98a093] mb-1">Impact</p>
+<p class="text-sm font-semibold">0.4kg CO2 Saved</p>
+</div>
+<div class="text-left border-l border-[#32457c]/20 pl-4">
+<p class="text-[10px] uppercase tracking-widest text-[#98a093] mb-1">Type</p>
+<p class="text-sm font-semibold">Glass Recycle</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full space-y-4">
+<button class="w-full h-14 bg-[#a8d0b4] text-black font-bold text-lg rounded-xl active:scale-95 duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="center_focus_strong">center_focus_strong</span>
+                Scan Next
+            </button>
+<button class="w-full h-14 bg-transparent text-[#98a093] font-medium text-sm hover:text-[#a8d0b4] transition-colors duration-200">
+                Back to Dashboard
+            </button>
+</div>
+</main>
+<section class="w-full px-8 pb-12 pt-8">
+<div class="bg-surface-container rounded-2xl p-6 border border-[#32457c]/10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-sm font-bold tracking-tight text-[#E5E7EB]">Next Milestone</h3>
+<span class="text-xs font-medium text-[#a8d0b4]">75% Complete</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-[#a8d0b4] w-3/4"></div>
+</div>
+<p class="mt-3 text-[10px] text-[#98a093] leading-relaxed">
+                Earn 120 more points to unlock the "Eco Warrior" badge and 15% off at Sustainable Goods.
+            </p>
+</div>
+</section>
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-black/80 backdrop-blur-md flex justify-around items-center h-20 px-4 w-full border-t border-[#32457c]/15">
+<button class="flex flex-col items-center justify-center text-[#a8d0b4] scale-110 transition-transform active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="center_focus_strong" style="font-variation-settings: 'FILL' 1;">center_focus_strong</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Scan</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#98a093] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Market</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#98a093] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="redeem">redeem</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Rewards</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#98a093] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

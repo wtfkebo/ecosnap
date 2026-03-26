@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ───────────────────────────────────────────── */
+@layer base {
+  /* dark class is set directly on <html> in index.html */
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #000000;
+    color: #E5E7EB;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100dvh;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    white-space: nowrap;
+    user-select: none;
+  }
+}
+
+/* ── Utility ─────────────────────────────────────────── */
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   MICROINTERACTIONS (CSS only — no external lib)
+   ═══════════════════════════════════════════════════════ */
+
+/* ── 1. SCAN PULSE ─────────────────────────────────────
+   Outer ring breathes in/out while actively scanning    */
+.scan-pulse {
+  animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0%, 100% { transform: scale(1);    opacity: 0.85; }
+  50%       { transform: scale(1.06); opacity: 0.35; }
+}
+
+/* Secondary sweep line inside the reticle */
+.scan-sweep {
+  animation: sweep 2s linear infinite;
+}
+
+@keyframes sweep {
+  0%   { transform: rotate(0deg);   opacity: 0.6; }
+  50%  { opacity: 1; }
+  100% { transform: rotate(360deg); opacity: 0.6; }
+}
+
+/* Reticle corner brackets glow on detection */
+.corner-glow {
+  animation: corner-flash 0.4s ease-out forwards;
+}
+
+@keyframes corner-flash {
+  0%   { opacity: 0.8; filter: brightness(1);   }
+  50%  { opacity: 1;   filter: brightness(2);   }
+  100% { opacity: 1;   filter: brightness(1.4); }
+}
+
+/* ── 2. HUD LABELS ─────────────────────────────────────
+   Fade + slide-in from left on mount                   */
+.hud-enter {
+  animation: hud-slide-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes hud-slide-in {
+  from { transform: translateX(-12px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+/* ── 3. DETECTION BADGE ────────────────────────────────
+   Scale + fade in from top-right                       */
+.badge-enter {
+  animation: badge-pop-in 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes badge-pop-in {
+  0%   { transform: scale(0.7) translateY(-8px); opacity: 0; }
+  100% { transform: scale(1)   translateY(0);    opacity: 1; }
+}
+
+/* ── 4. BOTTOM SHEET SLIDE UP ──────────────────────────
+   Panel slides up from below the viewport              */
+.sheet-enter {
+  animation: sheet-slide-up 0.38s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+@keyframes sheet-slide-up {
+  from { transform: translateY(110%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* ── 5. REWARD POP ─────────────────────────────────────
+   Check-circle icon springs in with overshoot          */
+.reward-pop {
+  animation: reward-spring 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.4) forwards;
+}
+
+@keyframes reward-spring {
+  0%   { transform: scale(0.4); opacity: 0; }
+  60%  { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+/* ── 6. POINTS FADE UP ─────────────────────────────────
+   The "+30 EcoPoints" heading drifts up and fades in   */
+.points-enter {
+  animation: points-up 0.6s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes points-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* ── 7. PROGRESS BAR FILL ──────────────────────────────
+   Bar animates from 0 to target width on mount         */
+.progress-bar {
+  animation: bar-fill 1s 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: left;
+}
+
+@keyframes bar-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ── 8. SCREEN FADE IN ─────────────────────────────────
+   Each screen fades in on mount                        */
+.screen-enter {
+  animation: screen-fade 0.3s ease-out forwards;
+}
+
+@keyframes screen-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* ── 9. NAV TAB ACTIVE ─────────────────────────────────
+   Active tab dot indicator slides under active icon    */
+.nav-dot {
+  animation: dot-appear 0.2s ease-out forwards;
+}
+
+@keyframes dot-appear {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+/* ── 10. CARD HOVER LIFT ───────────────────────────────
+   Reusable for any card — subtle lift on hover         */
+.card-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(168, 208, 180, 0.08);
+}

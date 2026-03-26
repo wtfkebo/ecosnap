@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#46655d",
+              "on-secondary-fixed": "#3a4137",
+              "on-tertiary-fixed-variant": "#4b6b62",
+              "background": "#070d1f",
+              "secondary-fixed": "#dde5d6",
+              "secondary-container": "#363e33",
+              "primary-fixed-dim": "#b5dec2",
+              "outline-variant": "#32457c",
+              "tertiary-fixed-dim": "#c7eadf",
+              "surface-container-highest": "#0a2257",
+              "inverse-on-surface": "#4f5469",
+              "inverse-primary": "#426750",
+              "on-primary": "#234733",
+              "surface-container": "#0a1839",
+              "surface-variant": "#0a2257",
+              "primary-dim": "#9ac2a7",
+              "outline": "#6073ad",
+              "on-tertiary-container": "#3e5d55",
+              "surface-bright": "#082768",
+              "on-primary-fixed": "#224632",
+              "tertiary": "#e5fff6",
+              "on-error-container": "#ff9993",
+              "primary-container": "#2a4e39",
+              "error-container": "#7f2927",
+              "surface-tint": "#a8d0b4",
+              "surface-container-low": "#09122b",
+              "on-secondary-container": "#bac2b3",
+              "surface-container-high": "#0b1d48",
+              "inverse-surface": "#faf8ff",
+              "on-surface-variant": "#96a9e6",
+              "tertiary-fixed": "#d5f8ed",
+              "secondary-fixed-dim": "#cfd7c8",
+              "secondary-dim": "#98a093",
+              "tertiary-container": "#d0f3e7",
+              "on-secondary-fixed-variant": "#565e52",
+              "surface-container-lowest": "#000000",
+              "error-dim": "#bb5551",
+              "on-secondary": "#1b2219",
+              "surface": "#070d1f",
+              "on-error": "#490106",
+              "primary-fixed": "#c3eccf",
+              "on-tertiary-fixed": "#2f4e46",
+              "on-background": "#dfe4ff",
+              "tertiary-dim": "#c7eadf",
+              "surface-dim": "#070d1f",
+              "secondary": "#98a093",
+              "on-surface": "#dfe4ff",
+              "on-primary-container": "#b1dabe",
+              "on-primary-fixed-variant": "#3f634d",
+              "error": "#ee7d77",
+              "primary": "#a8d0b4"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#a8d0b4]">eco</span>
+<h1 class="text-xl font-bold tracking-tighter text-[#a8d0b4]">EcoSnap</h1>
+</div>
+<div class="font-['Inter'] leading-relaxed tracking-tight text-[#E5E7EB]">
+            2,450 pts
+        </div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Profile Header -->
+<section class="mb-12">
+<div class="flex items-center gap-6 mb-8">
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-outline-variant/15 p-1">
+<img class="w-full h-full object-cover rounded-full" data-alt="portrait of a young woman with a thoughtful expression against a soft-focus urban background with natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuNZFZCXZHEsgs_uC5sLRACT4ceFYtmwCOGFRBHD9WuY7F9rxUsgG0bckIZKS4ZefAF0Z9NFUTGimGmMqb9XWHDFuMwdneveCWZgyvAcqCpBa4yAm0yGmwZ7cn2bpr3VYjWpPJiMKQ5dk5n0gqcRhOf-Pezm6oluAgBIMhlHopn7tfcBPIhgwO-yj4VDJ4hoIjwibD9NLYcrLZvHx4JtuI6jMLwLaGpRyGzdpMew9JxAFFV-5AOSKaaZT01gq1AoE6GihVxcK3HL9N"/>
+</div>
+<div>
+<h2 class="text-2xl font-bold tracking-tight text-on-surface">Elena Vance</h2>
+<p class="text-secondary text-sm">Eco-Contributor since Jan 2024</p>
+</div>
+</div>
+<!-- Impact Bento Stats -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/15">
+<span class="text-secondary text-xs uppercase tracking-widest font-semibold block mb-2">Impact Score</span>
+<div class="text-3xl font-bold tracking-tighter text-primary">842</div>
+<div class="mt-4 h-1 bg-surface-container-highest w-full">
+<div class="h-1 bg-primary w-[82%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/15">
+<span class="text-secondary text-xs uppercase tracking-widest font-semibold block mb-2">Items Scanned</span>
+<div class="text-3xl font-bold tracking-tighter text-on-surface">1,124</div>
+<p class="text-[10px] text-on-surface-variant mt-2">+12 this week</p>
+</div>
+</div>
+</section>
+<!-- Profile Sections -->
+<section class="space-y-10">
+<!-- Account Settings -->
+<div>
+<h3 class="text-secondary text-[10px] font-bold uppercase tracking-[0.2em] mb-4 px-1">Account Settings</h3>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden">
+<div class="flex items-center justify-between p-4 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">person_outline</span>
+<span class="text-on-surface font-medium text-sm">Personal Information</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">notifications_none</span>
+<span class="text-on-surface font-medium text-sm">Notification Preferences</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">verified_user</span>
+<span class="text-on-surface font-medium text-sm">Privacy &amp; Security</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Eco History -->
+<div>
+<h3 class="text-secondary text-[10px] font-bold uppercase tracking-[0.2em] mb-4 px-1">Scan History</h3>
+<div class="bg-surface-container-lowest rounded-xl p-2">
+<div class="p-4 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">recycling</span>
+</div>
+<div class="flex-1">
+<div class="text-on-surface text-sm font-semibold">Aluminum Can</div>
+<div class="text-secondary text-xs">Mar 12 • +15 pts</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm">info</span>
+</div>
+<div class="p-4 flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">local_drink</span>
+</div>
+<div class="flex-1">
+<div class="text-on-surface text-sm font-semibold">PET Bottle</div>
+<div class="text-secondary text-xs">Mar 10 • +20 pts</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm">info</span>
+</div>
+</div>
+</div>
+<!-- Logout -->
+<button class="w-full py-4 text-center text-error font-semibold text-sm hover:bg-error-container/10 rounded-xl transition-colors border border-outline-variant/5">
+                Log out
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-black/80 backdrop-blur-md border-t border-[#32457c]/15 flex justify-around items-center h-20 px-4 w-full">
+<a class="flex flex-col items-center justify-center text-[#98a093] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">center_focus_strong</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Scan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#98a093] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Market</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#98a093] opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">redeem</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Rewards</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#a8d0b4] scale-110 transition-transform active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Inter'] text-[10px] font-medium tracking-wide uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>
